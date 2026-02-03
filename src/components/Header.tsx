@@ -59,83 +59,85 @@ const Header = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <div key={link.name} className="relative">
-                {link.hasDropdown ? (
-                  <div
-                    className="relative"
-                    onMouseEnter={() => setIsServicesOpen(true)}
-                    onMouseLeave={() => setIsServicesOpen(false)}
-                  >
-                    <button
-                      className="nav-link text-sm uppercase tracking-wide flex items-center gap-1"
+          <div className="flex items-center gap-4">
+            {/* Desktop Navigation */}
+            <nav className="hidden lg:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <div key={link.name} className="relative">
+                  {link.hasDropdown ? (
+                    <div
+                      className="relative"
+                      onMouseEnter={() => setIsServicesOpen(true)}
+                      onMouseLeave={() => setIsServicesOpen(false)}
+                    >
+                      <button
+                        className="nav-link text-sm uppercase tracking-wide flex items-center gap-1"
+                      >
+                        {link.name}
+                        <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+                      </button>
+                      
+                      {/* Dropdown Menu */}
+                      <AnimatePresence>
+                        {isServicesOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 10 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute top-full left-0 mt-2 w-64 bg-card rounded-xl shadow-lg border border-border overflow-hidden z-50"
+                          >
+                            <div className="py-2">
+                              {services.map((service) => (
+                                <Link
+                                  key={service.name}
+                                  to={service.href}
+                                  className="block px-4 py-3 text-sm text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+                                >
+                                  {service.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className={`nav-link text-sm uppercase tracking-wide ${
+                        location.pathname === link.href ? 'nav-link-active' : ''
+                      }`}
                     >
                       {link.name}
-                      <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
-                    </button>
-                    
-                    {/* Dropdown Menu */}
-                    <AnimatePresence>
-                      {isServicesOpen && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 10 }}
-                          transition={{ duration: 0.2 }}
-                          className="absolute top-full left-0 mt-2 w-64 bg-card rounded-xl shadow-lg border border-border overflow-hidden z-50"
-                        >
-                          <div className="py-2">
-                            {services.map((service) => (
-                              <Link
-                                key={service.name}
-                                to={service.href}
-                                className="block px-4 py-3 text-sm text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-                              >
-                                {service.name}
-                              </Link>
-                            ))}
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ) : (
-                  <Link
-                    to={link.href}
-                    className={`nav-link text-sm uppercase tracking-wide ${
-                      location.pathname === link.href ? 'nav-link-active' : ''
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                )}
-              </div>
-            ))}
-          </nav>
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center gap-4">
-            <a
-              href="tel:+919849869055"
-              className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground hover:bg-orange-dark transition-colors"
+            {/* CTA Button */}
+            <div className="hidden lg:flex items-center gap-4">
+              <a
+                href="tel:+919849869055"
+                className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground hover:bg-orange-dark transition-colors"
+              >
+                <Phone className="w-5 h-5" />
+              </a>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="lg:hidden w-12 h-12 flex items-center justify-center rounded-full bg-secondary"
             >
-              <Phone className="w-5 h-5" />
-            </a>
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden w-12 h-12 flex items-center justify-center rounded-full bg-secondary"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
         </div>
       </div>
 
