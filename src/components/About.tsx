@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Target, Focus, Clock, Mail, Calendar } from "lucide-react";
+import TeamImage from "@/assets/team.avif";
 
 const About = () => {
   const ref = useRef(null);
@@ -63,14 +64,13 @@ const About = () => {
             className="relative"
           >
             {/* Team Image Placeholder */}
-            <div className="rounded-3xl overflow-hidden shadow-xl mb-8">
+            <div className="rounded-3xl overflow-hidden  mb-8">
               <div className="aspect-[4/3] bg-gradient-to-br from-primary/20 to-orange-light/20 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-24 h-24 bg-primary rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-4xl">👥</span>
-                  </div>
-                  <p className="text-lg font-medium text-foreground">Our Team</p>
-                </div>
+                <img
+                  src={TeamImage}
+                  alt="Our Team"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
 

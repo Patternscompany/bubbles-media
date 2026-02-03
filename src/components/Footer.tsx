@@ -8,6 +8,7 @@ import {
   Linkedin,
   MessageCircle
 } from "lucide-react";
+import Logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -18,10 +19,9 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-heading font-black text-lg">B</span>
-              </div>
-              <span className="font-heading font-bold text-xl">BUBBLES</span>
+              <div className="w-100 h-20  rounded-full flex items-center justify-center">
+                            <img src={Logo} alt="BUBBLES logo" className="w-100 h-20" />
+                          </div>
             </div>
             <p className="text-white/70 text-sm leading-relaxed mb-4">
               We build systems that scale - and we don't vanish after delivery.

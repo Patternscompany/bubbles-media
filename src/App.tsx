@@ -15,6 +15,7 @@ import MetaGoogleAds from "./pages/services/MetaGoogleAds";
 import SocialMediaMarketing from "./pages/services/SocialMediaMarketing";
 import WebsiteDesign from "./pages/services/WebsiteDesign";
 import Ecommerce from "./pages/services/Ecommerce";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
