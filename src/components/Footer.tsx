@@ -99,8 +99,8 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-white/70 text-sm">
-                  123 Business Street,<br />
-                  Digital City, India
+                  Hyderabad,<br />
+                  Telangana, India
                 </span>
               </li>
               <li className="flex items-center gap-3">
