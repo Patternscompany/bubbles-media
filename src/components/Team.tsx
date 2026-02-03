@@ -9,6 +9,7 @@ import Pandu from "../assets/team/pandu.png"
 import Rakesh from "../assets/team/rakesh.png"
 import Sasi from "../assets/team/sasi.png"
 import Ramya from "../assets/team/ramya.png"
+import Sathwika from "../assets/team/sathwika.png"
 
 const teamMembers = [
   {
@@ -74,6 +75,14 @@ const teamMembers = [
     experience: "ROI Optimization",
     color: "from-yellow-400 to-orange-500",
     image: Ramya,
+  },
+  {
+    name: "Sathwika",
+    role: "Content Creator",
+    specialty: "Engaging Copy",
+    experience: "Brand Storytelling",
+    color: "from-fuchsia-400 to-fuchsia-600",
+    image: Sathwika,
   },
 
 ];
