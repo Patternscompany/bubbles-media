@@ -13,7 +13,7 @@ import heroWoman from "@/assets/hero.png";
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen pt-24 pb-16 overflow-hidden bg-hero-pattern">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-200px)]">
           {/* Left Content */}
           <motion.div
