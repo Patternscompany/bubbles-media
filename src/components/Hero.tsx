@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { ChevronDown, Star } from "lucide-react";
-import heroWoman from "@/assets/hero-woman.png";
+import heroWoman from "@/assets/hero.png";
 
-const floatingBadges = [
-  { name: "React", icon: "⚛️", position: "top-[15%] left-[5%]", delay: 0 },
-  { name: "Google Workspace", icon: "🔧", position: "top-[8%] right-[10%]", delay: 0.2 },
-  { name: "GoDaddy", icon: "🌐", position: "top-[25%] right-[5%]", delay: 0.4 },
-  { name: "SEO SMM", icon: "📈", position: "bottom-[30%] right-[3%]", delay: 0.6 },
-  { name: "Shopify", icon: "🛒", position: "bottom-[20%] right-[15%]", delay: 0.8 },
-];
+// const floatingBadges = [
+//   { name: "React", icon: "⚛️", position: "top-[15%] left-[5%]", delay: 0 },
+//   { name: "Google Workspace", icon: "🔧", position: "top-[8%] right-[10%]", delay: 0.2 },
+//   { name: "GoDaddy", icon: "🌐", position: "top-[25%] right-[5%]", delay: 0.4 },
+//   { name: "SEO SMM", icon: "📈", position: "bottom-[30%] right-[3%]", delay: 0.6 },
+//   { name: "Shopify", icon: "🛒", position: "bottom-[20%] right-[15%]", delay: 0.8 },
+// ];
 
 const Hero = () => {
   return (
@@ -52,20 +52,7 @@ const Hero = () => {
               </p>
             </div>
 
-            {/* Google Reviews */}
-            <div className="flex items-center gap-2 mb-8">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-5 h-5 fill-yellow-400 text-yellow-400"
-                  />
-                ))}
-              </div>
-              <span className="text-sm text-muted-foreground">
-                Based on <strong className="text-foreground">Google reviews</strong>
-              </span>
-            </div>
+      
           </motion.div>
 
           {/* Right Content - Hero Image */}
@@ -85,20 +72,7 @@ const Hero = () => {
               className="relative z-10 w-auto h-[450px] md:h-[550px] object-contain"
             />
 
-            {/* Floating Badges */}
-            {floatingBadges.map((badge, index) => (
-              <motion.div
-                key={badge.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: badge.delay + 0.5, duration: 0.5 }}
-                className={`floating-badge ${badge.position} animate-float hidden md:flex`}
-                style={{ animationDelay: `${index * 0.3}s` }}
-              >
-                <span className="text-xl">{badge.icon}</span>
-                <span>{badge.name}</span>
-              </motion.div>
-            ))}
+            
           </motion.div>
         </div>
       </div>

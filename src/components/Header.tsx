@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import Logo from "@/assets/logo.png";
 
 const services = [
   { name: "Web Designing", href: "/services/website-design" },
@@ -53,12 +54,9 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-heading font-black text-lg">B</span>
+            <div className="w-100 h-20  rounded-full flex items-center justify-center">
+              <img src={Logo} alt="BUBBLES logo" className="w-100 h-20" />
             </div>
-            <span className="font-heading font-bold text-xl text-foreground hidden sm:block">
-              BUBBLES
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
