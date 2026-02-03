@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import Manasa from "../assets/team/manasa.png"
+import Chandra from "../assets/team/chandra.png"
+import Jagadeesh from "../assets/team/jagadeesh.png"
+import Kumar from "../assets/team/kumar.png"
+import Pandu from "../assets/team/pandu.png"
+import Rakesh from "../assets/team/rakesh.png"
+import Sasi from "../assets/team/sasi.png"
+import Ramya from "../assets/team/ramya.png"
 
 const teamMembers = [
   {
@@ -9,6 +17,7 @@ const teamMembers = [
     specialty: "Leadership & Operations",
     experience: "5+ Years",
     color: "from-pink-400 to-pink-600",
+    image: Manasa,
   },
   {
     name: "Chandra",
@@ -16,6 +25,7 @@ const teamMembers = [
     specialty: "Creative UI/UX",
     experience: "Brand Visuals",
     color: "from-purple-400 to-purple-600",
+    image: Chandra,
   },
   {
     name: "Jagadeesh",
@@ -23,6 +33,7 @@ const teamMembers = [
     specialty: "Web Applications",
     experience: "API Integration",
     color: "from-blue-400 to-blue-600",
+    image: Jagadeesh,
   },
   {
     name: "Kumar",
@@ -30,6 +41,7 @@ const teamMembers = [
     specialty: "Performance & Security",
     experience: "Database Management",
     color: "from-green-400 to-green-600",
+    image: Kumar,
   },
   {
     name: "Pandu",
@@ -37,6 +49,7 @@ const teamMembers = [
     specialty: "React & UI Logic",
     experience: "Responsive Design",
     color: "from-cyan-400 to-cyan-600",
+    image: Pandu,
   },
   {
     name: "Rakesh",
@@ -44,6 +57,7 @@ const teamMembers = [
     specialty: "Campaign Strategy",
     experience: "Brand Engagement",
     color: "from-rose-400 to-rose-600",
+    image: Rakesh,
   },
   {
     name: "Sasi",
@@ -51,6 +65,7 @@ const teamMembers = [
     specialty: "On-page & Off-page",
     experience: "Ranking Growth",
     color: "from-emerald-400 to-emerald-600",
+    image: Sasi,
   },
   {
     name: "Ramya",
@@ -58,7 +73,9 @@ const teamMembers = [
     specialty: "Lead Generation",
     experience: "ROI Optimization",
     color: "from-yellow-400 to-orange-500",
+    image: Ramya,
   },
+
 ];
 
 const Team = () => {
@@ -79,7 +96,7 @@ const Team = () => {
             team
           </p>
           <h2 className="section-title mb-4">
-            <span className="text-primary">Bubbleism</span>
+            <span className="text-primary uppercase">Bubbleism</span>
           </h2>
           <p className="section-subtitle">
             Our dedicated professionals who drive our success
@@ -106,9 +123,9 @@ const Team = () => {
                 {/* Avatar Placeholder */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="w-24 h-24 md:w-32 md:h-32 bg-white/20 rounded-full flex items-center justify-center">
-                    <span className="text-4xl md:text-5xl font-bold text-white">
-                      {member.name[0]}
-                    </span>
+                    <img src={member.image} alt={member.name} className="w-24 h-24 md:w-32 md:h-32 rounded-full" />
+                      
+                    
                   </div>
                 </div>
 
