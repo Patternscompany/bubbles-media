@@ -9,6 +9,7 @@ import {
   MessageCircle
 } from "lucide-react";
 import Logo from "@/assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -45,18 +46,24 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              {["Home", "Services", "About Us", "Gallery", "Career", "Blog", "Contact"].map(
-                (link) => (
-                  <li key={link}>
-                    <a
-                      href={`#${link.toLowerCase().replace(" ", "-")}`}
-                      className="text-white/70 hover:text-primary transition-colors text-sm"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                )
-              )}
+              {[
+                { name: "Home", to: "/" },
+                { name: "Services", to: "/services/website-design" },
+                { name: "About Us", to: "/about" },
+                { name: "Gallery", to: "/gallery" },
+                { name: "Career", to: "/career" },
+                { name: "Blog", to: "/blog" },
+                { name: "Contact", to: "/contact" },
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link
+                    to={link.to}
+                    className="text-white/70 hover:text-primary transition-colors text-sm"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -65,21 +72,21 @@ const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Services</h3>
             <ul className="space-y-2">
               {[
-                "Web Designing",
-                "SEO Optimization",
-                "Social Media",
-                "Google Ads",
-                "Graphic Design",
-                "AI Marketing",
-                "E-commerce",
+                { name: "Web Designing", to: "/services/website-design" },
+                { name: "SEO Optimization", to: "/services/seo" },
+                { name: "Social Media", to: "/services/social-media" },
+                { name: "Google Ads", to: "/services/ads" },
+                { name: "Graphic Design", to: "/contact" },
+                { name: "AI Marketing", to: "/contact" },
+                { name: "E-commerce", to: "/services/ecommerce" },
               ].map((service) => (
-                <li key={service}>
-                  <a
-                    href="#services"
+                <li key={service.name}>
+                  <Link
+                    to={service.to}
                     className="text-white/70 hover:text-primary transition-colors text-sm"
                   >
-                    {service}
-                  </a>
+                    {service.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -118,7 +125,7 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-white/60 text-sm">
-              © 2024 Bubbles Media. All rights reserved.
+              © {new Date().getFullYear()} Bubbles Media. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a href="#" className="text-white/60 text-sm hover:text-primary transition-colors">
