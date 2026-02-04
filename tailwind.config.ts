@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["Montserrat", "system-ui", "sans-serif"],
+        heading: ["Genty Sans", "Montserrat", "system-ui", "sans-serif"],
         body: ["Poppins", "system-ui", "sans-serif"],
       },
       colors: {

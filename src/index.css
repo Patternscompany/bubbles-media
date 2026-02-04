@@ -4,6 +4,26 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
+@font-face {
+  font-family: 'Genty';
+  src: url('./assets/genty-font/Genty-Regular.woff2') format('woff2'),
+       url('./assets/genty-font/Genty-Regular.woff') format('woff'),
+       url('./assets/genty-font/Genty-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Genty Sans';
+  src: url('./assets/genty-font/GentySans-Regular.woff2') format('woff2'),
+       url('./assets/genty-font/GentySans-Regular.woff') format('woff'),
+       url('./assets/genty-font/GentySans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
